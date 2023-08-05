@@ -1,20 +1,54 @@
-public class FahrradGeschwindigkeit {
-Durchmesser des Fahrradreifens in Zoll.
-   */
-  public static int durchmesserInZoll = 28;
+public class Programmierung1Gruppe {
+	/**
+	 * Fachsemester der Person.
+	 */
+	public static int semester = 1;
 
-  /**
-   * Sekunden pro Umdrehung des Vorderrads.
-   */
-  public static double sekundenProUmdrehung = 0.5;
+	/**
+	 * Matrikelnummer der Person.
+	 */
+	public static int matrikelnummer = 270020;
 
-  public static void main(String[] args) {
-    /*
-     * Gib hier die Geschwindigkeit des Fahrrads in km/h aus.
-     */
-	  double weg_inCM = durchmesserInZoll * Math.PI * 2.54 ;
-	  double geschwindigkeit_inCMS =  weg_inCM / sekundenProUmdrehung ;
-	  double geschwindigkeit_inKMh = geschwindigkeit_inCMS * 3.6 / 100 ;
-    System.out.println(geschwindigkeit_inKMh); 
-  }
+	/**
+	 * Studiengang der Person: True, falls die Person Medieninformatik studiert.
+	 */
+	public static boolean medieninformatik = true;
+
+	public static void main(String[] args) {
+		/*
+		 * Aktuell gibt das Programm unabhängig von der Eingabe alle drei möglichen
+		 * Ausgaben aus. Korrigiere das!
+		 */
+
+		/*
+		 * Zug 1 ist für alle Medieninformatik-Studierenden, die eine ungerade
+		 * Matrikelnummer haben oder nicht mehr im ersten Semester sind.
+		 */
+		if (medieninformatik && (matrikelnummer % 2 == 1 || semester > 1)) {
+
+			// wenn die 'medieninformatik' true ist und entwieder die 'matrikelnummer'
+			// ungerade Zahl
+			// (Rest der Division durch 2 ist 1) oder semester großer als 1 ist.
+
+			System.out.println("Zug 1");
+		}
+		/*
+		 * Zug 2 ist für alle Medieninformatik-Studierenden mit gerader Matrikelnummer
+		 * im 1. Semester.
+		 */
+		else if (medieninformatik && (matrikelnummer % 2 == 0 && semester == 1)) {
+
+			// wenn die 'medieninformatik' true ist sowohl die 'matrikelnummer' gerade Zahl
+			// (Rest der Division durch 2 ist 0) als auch das 'semester' gleich 1 ist.
+
+			System.out.println("Zug 2");
+		}
+		/*
+		 * Die Warteliste ist für alle Studierenden aus anderen Studiengängen.
+		 */
+		else
+			// wenn die 'medieninformatik' false ist.
+
+			System.out.println("Warteliste");
+	}
 }
