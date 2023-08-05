@@ -1,0 +1,20 @@
+public class FahrradGeschwindigkeit {
+Durchmesser des Fahrradreifens in Zoll.
+   */
+  public static int durchmesserInZoll = 28;
+
+  /**
+   * Sekunden pro Umdrehung des Vorderrads.
+   */
+  public static double sekundenProUmdrehung = 0.5;
+
+  public static void main(String[] args) {
+    /*
+     * Gib hier die Geschwindigkeit des Fahrrads in km/h aus.
+     */
+	  double weg_inCM = durchmesserInZoll * Math.PI * 2.54 ;
+	  double geschwindigkeit_inCMS =  weg_inCM / sekundenProUmdrehung ;
+	  double geschwindigkeit_inKMh = geschwindigkeit_inCMS * 3.6 / 100 ;
+    System.out.println(geschwindigkeit_inKMh); 
+  }
+}
